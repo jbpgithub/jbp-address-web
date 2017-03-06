@@ -6,12 +6,12 @@
          metadata-complete="true" version="3.0">
 
     <servlet>
-        <servlet-name>testServlet</servlet-name>
-        <servlet-class>jbp.address.web.TestServlet</servlet-class>
+        <servlet-name>dispatcherServlet</servlet-name>
+        <servlet-class>jbp.address.web.DispatcherServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>testServlet</servlet-name>
+        <servlet-name>dispatcherServlet</servlet-name>
         <url-pattern>*.html</url-pattern>
     </servlet-mapping>
 
