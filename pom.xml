@@ -35,4 +35,12 @@
         </dependency>
     </dependencies>
 
+    <repositories>
+        <repository>
+            <id>Liberty</id>
+            <name>Liberty Repository</name>
+            <url>http://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/maven/repository/</url>
+        </repository>
+    </repositories>
+
 </project>
