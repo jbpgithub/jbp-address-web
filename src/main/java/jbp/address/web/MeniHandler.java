@@ -7,16 +7,15 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 /**
- * Created by kduvnjak on 06.03.2017.
+ * Created by Silver on 12.3.2017..
  */
-public class ListOfUsersHandler implements GetHandler {
-
+public class MeniHandler implements GetHandler {
     public void doGet(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
         PrintWriter printWriter = response.getWriter();
         printWriter.println("<!DOCTYPE html>\n" +
                 "<html lang=\"en\">\n" +
                 "<head>\n" +
-                "    <title>Popis kontakta</title>\n" +
+                "    <title>Izbornik</title>\n" +
                 "    <meta charset=\"UTF-8\">\n" +
                 "    <!-- Start Responsive Web Design - Bootstrap  -->\n" +
                 "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n" +
@@ -61,11 +60,12 @@ public class ListOfUsersHandler implements GetHandler {
                 "            </div>\n" +
                 "        </form>\n" +
                 "    </div>\n" +
+                "    <!--   -->\n" +
                 "    <div class=\"collapse navbar-collapse\" id=\"myNavbar\">\n" +
                 "        <ul class=\"nav navbar-nav\">\n" +
-                "            <li><a href=\"meni.html\">Izbornik</a></li>\n" +
-                "            <li><a href=\"c_new.html\">Novi kontakt</a></li>\n" +
-                "            <!--<li><a href=\"c_list.html\">Prikaz kontakta</a></li>\n" +
+                "            <!--   <li><a href=\"meni.html\">Izbornik</a></li>\n" +
+                "                   <li><a href=\"c_new.html\">Novi kontakt</a></li>\n" +
+                "                   <li><a href=\"c_list.html\">Prikaz kontakta</a></li>\n" +
                 "                   <li><a href=\"c_edit.html\">Uredi kontakt</a></li>\n" +
                 "             -->\n" +
                 "        </ul>\n" +
@@ -73,70 +73,48 @@ public class ListOfUsersHandler implements GetHandler {
                 "            <li><a href=\"login.html\"><span class=\"glyphicon glyphicon-log-out\"></span> Odjava</a></li>\n" +
                 "        </ul>\n" +
                 "    </div>\n" +
-                "</nav>\n" +
-                "<!-- Navigation Bars End -->\n" +
+                "    <!--\n" +
+                "    <div class=\"collapse navbar-collapse\" id=\"mySNavbar\">\n" +
+                "        <ul class=\"nav navbar-nav\">\n" +
+                "            <li><form class=\"navbar-form\" role=\"search\">\n" +
+                "                <div class=\"form-group input-group\">\n" +
+                "                    <input type=\"text\" class=\"form-control\" placeholder=\"Traži..\">\n" +
                 "\n" +
-                "<div class=\"container\">\n" +
-                "<form action=\"c_edit.html\">\n" +
-                "    <div class=\"table-responsive\">\n" +
-                "        <table class=\"table table-hover table-striped\">\n" +
-                "            <tr>\n" +
-                "                <th>Uredi</th>\n" +
-                "                <th>Ime Prezime</th>\n" +
-                "                <th>Email</th>\n" +
-                "                <th>Telefon</th>\n" +
-                "                <th>Fax</th>\n" +
-                "                <th>Mobitel</th>\n" +
-                "                <th>Spol</th>\n" +
-                "                <th>Adresa</th>\n" +
-                "                <th>Grad</th>\n" +
-                "                <th>Država</th>\n" +
-                "            </tr>\n" +
-                "            <tr>\n" +
-                "                <th><input type=\"submit\" value=\"Izmjeni\"></th>\n" +
-                "                <td>Pero Perić</td>\n" +
-                "                <td>pero.peric@gmail.com</td>\n" +
-                "                <td>01 2222 222</td>\n" +
-                "                <td>01 2222 223</td>\n" +
-                "                <td>099 222 222</td>\n" +
-                "                <td>Muško</td>\n" +
-                "                <td>Ulica 1</td>\n" +
-                "                <td>Zagreb</td>\n" +
-                "                <td>Hrvatska</td>\n" +
-                "            </tr>\n" +
-                "            <tr>\n" +
-                "                <th><input type=\"submit\" value=\"Izmjeni\"></th>\n" +
-                "                <td>Ivo Ivić</td>\n" +
-                "                <td>ivo.ivic@gmail.com</td>\n" +
-                "                <td>01 2223 222</td>\n" +
-                "                <td>01 2223 223</td>\n" +
-                "                <td>099 223 222</td>\n" +
-                "                <td>Muško</td>\n" +
-                "                <td>Ulica 2</td>\n" +
-                "                <td>Split</td>\n" +
-                "                <td>Hrvatska</td>\n" +
-                "\n" +
-                "            </tr>\n" +
-                "            <tr>\n" +
-                "                <th><input type=\"submit\" value=\"Izmjeni\"></th>\n" +
-                "                <td>Pero Hrabri</td>\n" +
-                "                <td>pero.hrabri@gmail.com</td>\n" +
-                "                <td>01 2224 222</td>\n" +
-                "                <td>01 2224 223</td>\n" +
-                "                <td>099 224 222</td>\n" +
-                "                <td>Muško</td>\n" +
-                "                <td>Ulica 5</td>\n" +
-                "                <td>Zabok</td>\n" +
-                "                <td>Hrvatska</td>\n" +
-                "            </tr>\n" +
-                "        </table>\n" +
+                "                    <span class=\"input-group-btn\">\n" +
+                "            <button class=\"btn btn-default\" type=\"button\">\n" +
+                "              <span class=\"glyphicon glyphicon-search\"></span>\n" +
+                "            </button>\n" +
+                "          </span>\n" +
+                "                </div>\n" +
+                "            </form></li>\n" +
+                "        </ul>\n" +
                 "    </div>\n" +
-                "</form>\n" +
+                "    -->\n" +
+                "</nav>\n" +
+                "\n" +
+                "<!-- Menu -->\n" +
+                "<div class=\"container\">\n" +
+                "    <div class=\"well\">\n" +
+                "        <a href=\"c_list.html\" class=\"btn btn-default btn-lg btn-block\" role=\"button\" data-toggle=\"tooltip\"\n" +
+                "           data-placement=\"auto\" title=\"Prikaz svih kontakta\">\n" +
+                "            <span class=\"glyphicon glyphicon-th-list\"></span> Svi kontakti</a>\n" +
+                "        <br>\n" +
+                "        <a href=\"c_new.html\" class=\"btn btn-default btn-lg btn-block\" role=\"button\" data-toggle=\"tooltip\"\n" +
+                "           data-placement=\"auto\" title=\"Kreiraj novi kontakt\">\n" +
+                "            <span class=\"glyphicon glyphicon-user\"></span> Novi kontakt</a>\n" +
+                "    </div>\n" +
                 "</div>\n" +
                 "\n" +
+                "<script>\n" +
+                "$(document).ready(function(){\n" +
+                "    $('[data-toggle=\"tooltip\"]').tooltip();\n" +
+                "});\n" +
+                "</script>\n" +
                 "\n" +
                 "<footer class=\"container text-center\">Copyright &copy; JBP</footer>\n" +
+                "\n" +
                 "</body>\n" +
+                "\n" +
                 "</html>");
     }
 }

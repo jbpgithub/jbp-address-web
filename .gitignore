@@ -38,3 +38,4 @@ fabric.properties
 hs_err_pid*
 .idea
 jbp-address-dao.iml
+/jbp-address-web.iml

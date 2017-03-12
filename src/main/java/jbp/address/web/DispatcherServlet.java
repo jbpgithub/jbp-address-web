@@ -20,7 +20,12 @@ public class DispatcherServlet extends HttpServlet {
 
     public DispatcherServlet() {
         getHandlerMap = new HashMap<String, GetHandler>();
-        getHandlerMap.put("listOfUsers", new ListOfUsersHandler());
+        getHandlerMap.put("c_list", new ListOfUsersHandler());
+        getHandlerMap.put("c_new", new NewContactHandler());
+        getHandlerMap.put("c_edit", new EditHandler());
+        getHandlerMap.put("login", new LoginHandler());
+        getHandlerMap.put("meni", new MeniHandler());
+        getHandlerMap.put("index", new IndexHandler());
     }
 
     @Override

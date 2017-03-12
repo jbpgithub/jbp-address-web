@@ -7,16 +7,15 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 /**
- * Created by kduvnjak on 06.03.2017.
+ * Created by Silver on 12.3.2017..
  */
-public class ListOfUsersHandler implements GetHandler {
-
+public class EditHandler implements GetHandler {
     public void doGet(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
         PrintWriter printWriter = response.getWriter();
         printWriter.println("<!DOCTYPE html>\n" +
                 "<html lang=\"en\">\n" +
                 "<head>\n" +
-                "    <title>Popis kontakta</title>\n" +
+                "    <title>Uredi kontakt</title>\n" +
                 "    <meta charset=\"UTF-8\">\n" +
                 "    <!-- Start Responsive Web Design - Bootstrap  -->\n" +
                 "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n" +
@@ -65,9 +64,8 @@ public class ListOfUsersHandler implements GetHandler {
                 "        <ul class=\"nav navbar-nav\">\n" +
                 "            <li><a href=\"meni.html\">Izbornik</a></li>\n" +
                 "            <li><a href=\"c_new.html\">Novi kontakt</a></li>\n" +
-                "            <!--<li><a href=\"c_list.html\">Prikaz kontakta</a></li>\n" +
-                "                   <li><a href=\"c_edit.html\">Uredi kontakt</a></li>\n" +
-                "             -->\n" +
+                "            <li><a href=\"c_list.html\">Svi kontakti</a></li>\n" +
+                "            <!-- <li><a href=\"c_edit.html\">Uredi kontakt</a></li>-->\n" +
                 "        </ul>\n" +
                 "        <ul class=\"nav navbar-nav navbar-right\">\n" +
                 "            <li><a href=\"login.html\"><span class=\"glyphicon glyphicon-log-out\"></span> Odjava</a></li>\n" +
@@ -76,64 +74,58 @@ public class ListOfUsersHandler implements GetHandler {
                 "</nav>\n" +
                 "<!-- Navigation Bars End -->\n" +
                 "\n" +
+                "<!-- Content -->\n" +
                 "<div class=\"container\">\n" +
-                "<form action=\"c_edit.html\">\n" +
-                "    <div class=\"table-responsive\">\n" +
-                "        <table class=\"table table-hover table-striped\">\n" +
-                "            <tr>\n" +
-                "                <th>Uredi</th>\n" +
-                "                <th>Ime Prezime</th>\n" +
-                "                <th>Email</th>\n" +
-                "                <th>Telefon</th>\n" +
-                "                <th>Fax</th>\n" +
-                "                <th>Mobitel</th>\n" +
-                "                <th>Spol</th>\n" +
-                "                <th>Adresa</th>\n" +
-                "                <th>Grad</th>\n" +
-                "                <th>Država</th>\n" +
-                "            </tr>\n" +
-                "            <tr>\n" +
-                "                <th><input type=\"submit\" value=\"Izmjeni\"></th>\n" +
-                "                <td>Pero Perić</td>\n" +
-                "                <td>pero.peric@gmail.com</td>\n" +
-                "                <td>01 2222 222</td>\n" +
-                "                <td>01 2222 223</td>\n" +
-                "                <td>099 222 222</td>\n" +
-                "                <td>Muško</td>\n" +
-                "                <td>Ulica 1</td>\n" +
-                "                <td>Zagreb</td>\n" +
-                "                <td>Hrvatska</td>\n" +
-                "            </tr>\n" +
-                "            <tr>\n" +
-                "                <th><input type=\"submit\" value=\"Izmjeni\"></th>\n" +
-                "                <td>Ivo Ivić</td>\n" +
-                "                <td>ivo.ivic@gmail.com</td>\n" +
-                "                <td>01 2223 222</td>\n" +
-                "                <td>01 2223 223</td>\n" +
-                "                <td>099 223 222</td>\n" +
-                "                <td>Muško</td>\n" +
-                "                <td>Ulica 2</td>\n" +
-                "                <td>Split</td>\n" +
-                "                <td>Hrvatska</td>\n" +
+                "    <div class=\"well\">\n" +
+                "        <h3 class=\"text-center\">UREDI KONTAKT</h3>\n" +
+                "        <form action=\"c_list.html\">\n" +
                 "\n" +
-                "            </tr>\n" +
-                "            <tr>\n" +
-                "                <th><input type=\"submit\" value=\"Izmjeni\"></th>\n" +
-                "                <td>Pero Hrabri</td>\n" +
-                "                <td>pero.hrabri@gmail.com</td>\n" +
-                "                <td>01 2224 222</td>\n" +
-                "                <td>01 2224 223</td>\n" +
-                "                <td>099 224 222</td>\n" +
-                "                <td>Muško</td>\n" +
-                "                <td>Ulica 5</td>\n" +
-                "                <td>Zabok</td>\n" +
-                "                <td>Hrvatska</td>\n" +
-                "            </tr>\n" +
-                "        </table>\n" +
+                "            <fieldset disabled>\n" +
+                "            <div class=\"form-group\">\n" +
+                "                <label for=\"name\">Ime Prezime:</label>\n" +
+                "                <input type=\"text\" class=\"form-control\" id=\"name\" placeholder=\"Pero Perić:\">\n" +
+                "            </div>\n" +
+                "            <div class=\"form-group\">\n" +
+                "                <label for=\"email\">Email:</label>\n" +
+                "                <input type=\"email\" class=\"form-control\" id=\"email\" placeholder=\"pero.peric@gmail.com\">\n" +
+                "            </div>\n" +
+                "            <div class=\"form-group\">\n" +
+                "                <label for=\"tel\">Lozinka:</label>\n" +
+                "                <input type=\"text\" class=\"form-control\" id=\"tel\" placeholder=\"01 2222 222\">\n" +
+                "            </div>\n" +
+                "            <div class=\"form-group\">\n" +
+                "                <label for=\"fax\">Faks:</label>\n" +
+                "                <input type=\"text\" class=\"form-control\" id=\"fax\" placeholder=\"01 2222 223\">\n" +
+                "            </div>\n" +
+                "            <div class=\"form-group\">\n" +
+                "                <label for=\"mob\">Mobitel:</label>\n" +
+                "                <input type=\"text\" class=\"form-control\" id=\"mob\" placeholder=\"099 222 222\">\n" +
+                "            </div>\n" +
+                "            <div class=\"checkbox\" value=\"spol\">\n" +
+                "                <label><input type=\"checkbox\" value=\"men\">Muško</label>\n" +
+                "                <label><input type=\"checkbox\" value=\"female\" disabled>Žensko</label>\n" +
+                "                <label><input type=\"checkbox\" value=\"other\" disabled>Nezna ni sam</label>\n" +
+                "            </div>\n" +
+                "            <div class=\"form-group\">\n" +
+                "                <label for=\"adresa\">Adresa:</label>\n" +
+                "                <input type=\"text\" class=\"form-control\" id=\"adresa\" placeholder=\"Ulica 1\">\n" +
+                "            </div>\n" +
+                "            <div class=\"form-group\">\n" +
+                "                <label for=\"grad\">Grad:</label>\n" +
+                "                <input type=\"text\" class=\"form-control\" id=\"grad\" placeholder=\"Zagreb\">\n" +
+                "            </div>\n" +
+                "            <div class=\"form-group\">\n" +
+                "                <label for=\"drzava\">Država:</label>\n" +
+                "                <input type=\"text\" class=\"form-control\" id=\"drzava\" placeholder=\"Hrvatska\">\n" +
+                "            </div>\n" +
+                "                </fieldset>\n" +
+                "\n" +
+                "            <button type=\"submit\" class=\"btn btn-default\">Spremi</button>\n" +
+                "        </form>\n" +
+                "\n" +
                 "    </div>\n" +
-                "</form>\n" +
                 "</div>\n" +
-                "\n" +
+                "<!-- End Content  -->\n" +
                 "\n" +
                 "<footer class=\"container text-center\">Copyright &copy; JBP</footer>\n" +
                 "</body>\n" +
