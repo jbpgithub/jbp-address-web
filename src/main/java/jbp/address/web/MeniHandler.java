@@ -11,9 +11,11 @@ import java.io.PrintWriter;
  */
 public class MeniHandler implements GetHandler {
     public void doGet(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html; charset=UTF-8");
+        response.setCharacterEncoding("UTF-8");
         PrintWriter printWriter = response.getWriter();
         printWriter.println("<!DOCTYPE html>\n" +
-                "<html lang=\"en\">\n" +
+                "<html lang=\"hr\">\n" +
                 "<head>\n" +
                 "    <title>Izbornik</title>\n" +
                 "    <meta charset=\"UTF-8\">\n" +
@@ -23,16 +25,13 @@ public class MeniHandler implements GetHandler {
                 "    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js\"></script>\n" +
                 "    <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>\n" +
                 "    <!-- End Responsive Web Design - Bootstrap  -->\n" +
-                "    <link rel=\"stylesheet\" href=\"css/myBootstrap.css\">\n" +
-                "    <!--\n" +
-                "    <link rel=\"stylesheet\" href=\"css/stil.css\">\n" +
-                "    -->\n" +
+                "    <link rel=\"stylesheet\" href=\"resources/css/myBootstrap.css\">\n" +
                 "</head>\n" +
                 "<body>\n" +
                 "<header>\n" +
                 "    <div class=\"container page-header media\">\n" +
                 "        <div class=\"media-left media-middle\">\n" +
-                "            <img src=\"img/jbp_tb.png\" class=\"media-object\" alt=\"jpb logo\" style=\"height:50px;\">\n" +
+                "            <img src=\"resources/img/jbp_tb.png\" class=\"media-object\" alt=\"jpb logo\" style=\"height:50px;\">\n" +
                 "        </div>\n" +
                 "        <div class=\"media-body\">\n" +
                 "            <h1>Adresar</h1>\n" +
@@ -63,33 +62,11 @@ public class MeniHandler implements GetHandler {
                 "    <!--   -->\n" +
                 "    <div class=\"collapse navbar-collapse\" id=\"myNavbar\">\n" +
                 "        <ul class=\"nav navbar-nav\">\n" +
-                "            <!--   <li><a href=\"meni.html\">Izbornik</a></li>\n" +
-                "                   <li><a href=\"c_new.html\">Novi kontakt</a></li>\n" +
-                "                   <li><a href=\"c_list.html\">Prikaz kontakta</a></li>\n" +
-                "                   <li><a href=\"c_edit.html\">Uredi kontakt</a></li>\n" +
-                "             -->\n" +
                 "        </ul>\n" +
                 "        <ul class=\"nav navbar-nav navbar-right\">\n" +
                 "            <li><a href=\"login.html\"><span class=\"glyphicon glyphicon-log-out\"></span> Odjava</a></li>\n" +
                 "        </ul>\n" +
                 "    </div>\n" +
-                "    <!--\n" +
-                "    <div class=\"collapse navbar-collapse\" id=\"mySNavbar\">\n" +
-                "        <ul class=\"nav navbar-nav\">\n" +
-                "            <li><form class=\"navbar-form\" role=\"search\">\n" +
-                "                <div class=\"form-group input-group\">\n" +
-                "                    <input type=\"text\" class=\"form-control\" placeholder=\"Traži..\">\n" +
-                "\n" +
-                "                    <span class=\"input-group-btn\">\n" +
-                "            <button class=\"btn btn-default\" type=\"button\">\n" +
-                "              <span class=\"glyphicon glyphicon-search\"></span>\n" +
-                "            </button>\n" +
-                "          </span>\n" +
-                "                </div>\n" +
-                "            </form></li>\n" +
-                "        </ul>\n" +
-                "    </div>\n" +
-                "    -->\n" +
                 "</nav>\n" +
                 "\n" +
                 "<!-- Menu -->\n" +

@@ -11,9 +11,11 @@ import java.io.PrintWriter;
  */
 public class EditHandler implements GetHandler {
     public void doGet(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html; charset=UTF-8");
+        response.setCharacterEncoding("UTF-8");
         PrintWriter printWriter = response.getWriter();
         printWriter.println("<!DOCTYPE html>\n" +
-                "<html lang=\"en\">\n" +
+                "<html lang=\"hr\">\n" +
                 "<head>\n" +
                 "    <title>Uredi kontakt</title>\n" +
                 "    <meta charset=\"UTF-8\">\n" +
@@ -23,16 +25,13 @@ public class EditHandler implements GetHandler {
                 "    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js\"></script>\n" +
                 "    <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>\n" +
                 "    <!-- End Responsive Web Design - Bootstrap  -->\n" +
-                "    <link rel=\"stylesheet\" href=\"css/myBootstrap.css\">\n" +
-                "    <!--\n" +
-                "    <link rel=\"stylesheet\" href=\"css/stil.css\">\n" +
-                "    -->\n" +
+                "    <link rel=\"stylesheet\" href=\"resources/css/myBootstrap.css\">\n" +
                 "</head>\n" +
                 "<body>\n" +
                 "<header>\n" +
                 "    <div class=\"container page-header media\">\n" +
                 "        <div class=\"media-left media-middle\">\n" +
-                "            <img src=\"img/jbp_tb.png\" class=\"media-object\" alt=\"jpb logo\" style=\"height:50px;\">\n" +
+                "            <img src=\"resources/img/jbp_tb.png\" class=\"media-object\" alt=\"jpb logo\" style=\"height:50px;\">\n" +
                 "        </div>\n" +
                 "        <div class=\"media-body\">\n" +
                 "            <h1>Adresar</h1>\n" +
@@ -65,7 +64,6 @@ public class EditHandler implements GetHandler {
                 "            <li><a href=\"meni.html\">Izbornik</a></li>\n" +
                 "            <li><a href=\"c_new.html\">Novi kontakt</a></li>\n" +
                 "            <li><a href=\"c_list.html\">Svi kontakti</a></li>\n" +
-                "            <!-- <li><a href=\"c_edit.html\">Uredi kontakt</a></li>-->\n" +
                 "        </ul>\n" +
                 "        <ul class=\"nav navbar-nav navbar-right\">\n" +
                 "            <li><a href=\"login.html\"><span class=\"glyphicon glyphicon-log-out\"></span> Odjava</a></li>\n" +
@@ -81,48 +79,46 @@ public class EditHandler implements GetHandler {
                 "        <form action=\"c_list.html\">\n" +
                 "\n" +
                 "            <fieldset disabled>\n" +
-                "            <div class=\"form-group\">\n" +
-                "                <label for=\"name\">Ime Prezime:</label>\n" +
-                "                <input type=\"text\" class=\"form-control\" id=\"name\" placeholder=\"Pero Perić:\">\n" +
-                "            </div>\n" +
-                "            <div class=\"form-group\">\n" +
-                "                <label for=\"email\">Email:</label>\n" +
-                "                <input type=\"email\" class=\"form-control\" id=\"email\" placeholder=\"pero.peric@gmail.com\">\n" +
-                "            </div>\n" +
-                "            <div class=\"form-group\">\n" +
-                "                <label for=\"tel\">Lozinka:</label>\n" +
-                "                <input type=\"text\" class=\"form-control\" id=\"tel\" placeholder=\"01 2222 222\">\n" +
-                "            </div>\n" +
-                "            <div class=\"form-group\">\n" +
-                "                <label for=\"fax\">Faks:</label>\n" +
-                "                <input type=\"text\" class=\"form-control\" id=\"fax\" placeholder=\"01 2222 223\">\n" +
-                "            </div>\n" +
-                "            <div class=\"form-group\">\n" +
-                "                <label for=\"mob\">Mobitel:</label>\n" +
-                "                <input type=\"text\" class=\"form-control\" id=\"mob\" placeholder=\"099 222 222\">\n" +
-                "            </div>\n" +
-                "            <div class=\"checkbox\" value=\"spol\">\n" +
-                "                <label><input type=\"checkbox\" value=\"men\">Muško</label>\n" +
-                "                <label><input type=\"checkbox\" value=\"female\" disabled>Žensko</label>\n" +
-                "                <label><input type=\"checkbox\" value=\"other\" disabled>Nezna ni sam</label>\n" +
-                "            </div>\n" +
-                "            <div class=\"form-group\">\n" +
-                "                <label for=\"adresa\">Adresa:</label>\n" +
-                "                <input type=\"text\" class=\"form-control\" id=\"adresa\" placeholder=\"Ulica 1\">\n" +
-                "            </div>\n" +
-                "            <div class=\"form-group\">\n" +
-                "                <label for=\"grad\">Grad:</label>\n" +
-                "                <input type=\"text\" class=\"form-control\" id=\"grad\" placeholder=\"Zagreb\">\n" +
-                "            </div>\n" +
-                "            <div class=\"form-group\">\n" +
-                "                <label for=\"drzava\">Država:</label>\n" +
-                "                <input type=\"text\" class=\"form-control\" id=\"drzava\" placeholder=\"Hrvatska\">\n" +
-                "            </div>\n" +
-                "                </fieldset>\n" +
-                "\n" +
+                "                <div class=\"form-group\">\n" +
+                "                    <label for=\"name\">Ime Prezime:</label>\n" +
+                "                    <input type=\"text\" class=\"form-control\" id=\"name\" placeholder=\"Pero Perić:\">\n" +
+                "                </div>\n" +
+                "                <div class=\"form-group\">\n" +
+                "                    <label for=\"email\">Email:</label>\n" +
+                "                    <input type=\"email\" class=\"form-control\" id=\"email\" placeholder=\"pero.peric@gmail.com\">\n" +
+                "                </div>\n" +
+                "                <div class=\"form-group\">\n" +
+                "                    <label for=\"tel\">Lozinka:</label>\n" +
+                "                    <input type=\"text\" class=\"form-control\" id=\"tel\" placeholder=\"01 2222 222\">\n" +
+                "                </div>\n" +
+                "                <div class=\"form-group\">\n" +
+                "                    <label for=\"fax\">Faks:</label>\n" +
+                "                    <input type=\"text\" class=\"form-control\" id=\"fax\" placeholder=\"01 2222 223\">\n" +
+                "                </div>\n" +
+                "                <div class=\"form-group\">\n" +
+                "                    <label for=\"mob\">Mobitel:</label>\n" +
+                "                    <input type=\"text\" class=\"form-control\" id=\"mob\" placeholder=\"099 222 222\">\n" +
+                "                </div>\n" +
+                "                <div class=\"checkbox\" value=\"spol\">\n" +
+                "                    <label><input type=\"checkbox\" value=\"men\">Muško</label>\n" +
+                "                    <label><input type=\"checkbox\" value=\"female\" disabled>Žensko</label>\n" +
+                "                    <label><input type=\"checkbox\" value=\"other\" disabled>Nezna ni sam</label>\n" +
+                "                </div>\n" +
+                "                <div class=\"form-group\">\n" +
+                "                    <label for=\"adresa\">Adresa:</label>\n" +
+                "                    <input type=\"text\" class=\"form-control\" id=\"adresa\" placeholder=\"Ulica 1\">\n" +
+                "                </div>\n" +
+                "                <div class=\"form-group\">\n" +
+                "                    <label for=\"grad\">Grad:</label>\n" +
+                "                    <input type=\"text\" class=\"form-control\" id=\"grad\" placeholder=\"Zagreb\">\n" +
+                "                </div>\n" +
+                "                <div class=\"form-group\">\n" +
+                "                    <label for=\"drzava\">Država:</label>\n" +
+                "                    <input type=\"text\" class=\"form-control\" id=\"drzava\" placeholder=\"Hrvatska\">\n" +
+                "                </div>\n" +
+                "            </fieldset>\n" +
                 "            <button type=\"submit\" class=\"btn btn-default\">Spremi</button>\n" +
                 "        </form>\n" +
-                "\n" +
                 "    </div>\n" +
                 "</div>\n" +
                 "<!-- End Content  -->\n" +

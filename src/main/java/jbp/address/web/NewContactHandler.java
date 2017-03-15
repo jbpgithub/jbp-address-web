@@ -11,9 +11,11 @@ import java.io.PrintWriter;
  */
 public class NewContactHandler implements GetHandler {
     public void doGet(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html; charset=UTF-8");
+        response.setCharacterEncoding("UTF-8");
         PrintWriter printWriter = response.getWriter();
         printWriter.println("<!DOCTYPE html>\n" +
-                "<html lang=\"en\">\n" +
+                "<html lang=\"hr\">\n" +
                 "<head>\n" +
                 "    <title>Novi kontakt</title>\n" +
                 "    <meta charset=\"UTF-8\">\n" +
@@ -25,17 +27,15 @@ public class NewContactHandler implements GetHandler {
                 "    <script src=\"https://code.jquery.com/jquery-1.12.4.js\"></script>\n" +
                 "    <script src=\"https://code.jquery.com/ui/1.12.1/jquery-ui.js\"></script>\n" +
                 "    <!-- End Responsive Web Design - Bootstrap  -->\n" +
-                "    <link rel=\"stylesheet\" href=\"css/myBootstrap.css\">\n" +
-                "    <script src=\"js/jQueryAdresar.js\"></script>\n" +
-                "    <!--\n" +
-                "    <link rel=\"stylesheet\" href=\"css/stil.css\">\n" +
-                "    -->\n" +
+                "    <link rel=\"stylesheet\" href=\"resources/css/myBootstrap.css\">\n" +
+                "    <script src=\"resources/js/jQueryAdresar.js\"></script>\n" +
+                " \n" +
                 "</head>\n" +
                 "<body>\n" +
                 "<header>\n" +
                 "    <div class=\"container page-header media\">\n" +
                 "        <div class=\"media-left media-middle\">\n" +
-                "            <img src=\"img/jbp_tb.png\" class=\"media-object\" alt=\"jpb logo\" style=\"height:50px;\">\n" +
+                "            <img src=\"resources/img/jbp_tb.png\" class=\"media-object\" alt=\"jpb logo\" style=\"height:50px;\">\n" +
                 "        </div>\n" +
                 "        <div class=\"media-body\">\n" +
                 "            <h1>Adresar</h1>\n" +
@@ -44,7 +44,6 @@ public class NewContactHandler implements GetHandler {
                 "</header>\n" +
                 "<!-- Navigation Bars -->\n" +
                 "<nav class=\"container navbar navbar-inverse\">\n" +
-                "    <!-- -->\n" +
                 "    <div class=\"navbar-header\">\n" +
                 "        <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#myNavbar\">\n" +
                 "            <span class=\"icon-bar\"></span>\n" +
@@ -66,9 +65,7 @@ public class NewContactHandler implements GetHandler {
                 "    <div class=\"collapse navbar-collapse\" id=\"myNavbar\">\n" +
                 "        <ul class=\"nav navbar-nav\">\n" +
                 "            <li><a href=\"meni.html\">Izbornik</a></li>\n" +
-                "            <!--<li><a href=\"c_new.html\">Novi kontakt</a></li>-->\n" +
                 "            <li><a href=\"c_list.html\">Svi kontakti</a></li>\n" +
-                "            <!-- <li><a href=\"c_edit.html\">Uredi kontakt</a></li>-->\n" +
                 "        </ul>\n" +
                 "        <ul class=\"nav navbar-nav navbar-right\">\n" +
                 "            <li><a href=\"login.html\"><span class=\"glyphicon glyphicon-log-out\"></span> Odjava</a></li>\n" +
